@@ -1,460 +1,93 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>🦆 Duck Fan Club</title>
+    <title>Duck Fan Page</title>
 
-  <style>
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
+    <style>
+        body {
+            background-color: lightblue;
+            font-family: Arial;
+            text-align: center;
+        }
 
-    body {
-      font-family: "Trebuchet MS", Arial, sans-serif;
-      background: #fff8c9;
-      color: #3b3000;
-      overflow-x: hidden;
-    }
+        h1 {
+            color: orange;
+        }
 
-    /* Header */
-    header {
-      background: linear-gradient(135deg, #ffd21c, #ffae00);
-      padding: 25px;
-      text-align: center;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.15);
-    }
+        h2 {
+            color: darkblue;
+        }
 
-    header h1 {
-      font-size: 3rem;
-      color: white;
-      text-shadow: 3px 3px #c47b00;
-    }
+        .duck {
+            font-size: 100px;
+        }
 
-    header p {
-      color: #fff;
-      font-size: 1.2rem;
-      margin-top: 5px;
-    }
+        .box {
+            background-color: white;
+            margin: 20px;
+            padding: 20px;
+            border-radius: 10px;
+        }
 
-    nav {
-      margin-top: 18px;
-    }
-
-    nav a {
-      color: #4b3500;
-      text-decoration: none;
-      font-weight: bold;
-      margin: 0 12px;
-      background: #fff4a3;
-      padding: 8px 14px;
-      border-radius: 20px;
-      transition: 0.2s;
-    }
-
-    nav a:hover {
-      background: white;
-      transform: scale(1.1);
-      display: inline-block;
-    }
-
-    /* Hero */
-    .hero {
-      min-height: 500px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      text-align: center;
-      padding: 50px 20px;
-      position: relative;
-      background:
-        linear-gradient(rgba(255,255,255,0.3), rgba(255,255,255,0.3)),
-        #9ee7ff;
-      overflow: hidden;
-    }
-
-    .hero-content {
-      z-index: 2;
-      max-width: 700px;
-    }
-
-    .hero h2 {
-      font-size: 3.5rem;
-      color: #ffae00;
-      text-shadow: 3px 3px white;
-    }
-
-    .hero p {
-      font-size: 1.3rem;
-      margin: 20px 0;
-    }
-
-    .duck {
-      font-size: 8rem;
-      animation: bob 2s infinite ease-in-out;
-      display: inline-block;
-    }
-
-    @keyframes bob {
-      0%, 100% {
-        transform: translateY(0) rotate(-3deg);
-      }
-      50% {
-        transform: translateY(-20px) rotate(3deg);
-      }
-    }
-
-    .cloud {
-      position: absolute;
-      font-size: 5rem;
-      opacity: 0.7;
-      animation: float 18s linear infinite;
-    }
-
-    .cloud.one {
-      top: 50px;
-      left: -100px;
-    }
-
-    .cloud.two {
-      top: 160px;
-      left: -300px;
-      animation-delay: 7s;
-    }
-
-    @keyframes float {
-      from {
-        transform: translateX(0);
-      }
-      to {
-        transform: translateX(120vw);
-      }
-    }
-
-    /* Sections */
-    section {
-      padding: 60px 20px;
-      max-width: 1100px;
-      margin: auto;
-    }
-
-    section h2 {
-      text-align: center;
-      font-size: 2.5rem;
-      color: #e69b00;
-      margin-bottom: 35px;
-    }
-
-    /* Facts */
-    .facts {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-      gap: 20px;
-    }
-
-    .fact {
-      background: white;
-      padding: 25px;
-      border-radius: 20px;
-      text-align: center;
-      box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-      transition: 0.3s;
-    }
-
-    .fact:hover {
-      transform: translateY(-8px) rotate(1deg);
-    }
-
-    .fact .emoji {
-      font-size: 3rem;
-      margin-bottom: 12px;
-    }
-
-    .fact h3 {
-      color: #d88b00;
-      margin-bottom: 10px;
-    }
-
-    /* Gallery */
-    .gallery {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-      gap: 20px;
-    }
-
-    .gallery-card {
-      background: #ffdb4d;
-      border-radius: 20px;
-      padding: 30px;
-      text-align: center;
-      font-size: 6rem;
-      box-shadow: 0 5px 12px rgba(0,0,0,0.12);
-      transition: 0.3s;
-    }
-
-    .gallery-card:hover {
-      transform: scale(1.05);
-      background: #ffe98a;
-    }
-
-    .gallery-card p {
-      font-size: 1rem;
-      font-weight: bold;
-      margin-top: 10px;
-    }
-
-    /* Quack button */
-    .quack-section {
-      text-align: center;
-      background: #b9f0ff;
-      max-width: none;
-    }
-
-    .quack-button {
-      border: none;
-      background: #ffb900;
-      color: white;
-      padding: 18px 35px;
-      font-size: 1.5rem;
-      font-weight: bold;
-      border-radius: 50px;
-      cursor: pointer;
-      box-shadow: 0 6px 0 #d48700;
-      transition: 0.15s;
-    }
-
-    .quack-button:hover {
-      background: #ffc928;
-    }
-
-    .quack-button:active {
-      transform: translateY(5px);
-      box-shadow: 0 1px 0 #d48700;
-    }
-
-    #quackText {
-      margin-top: 25px;
-      font-size: 2rem;
-      font-weight: bold;
-      color: #d88b00;
-      min-height: 40px;
-    }
-
-    /* Footer */
-    footer {
-      background: #4c3900;
-      color: white;
-      text-align: center;
-      padding: 30px;
-    }
-
-    footer p {
-      margin: 5px;
-    }
-
-    /* Responsive */
-    @media (max-width: 600px) {
-      header h1 {
-        font-size: 2.2rem;
-      }
-
-      .hero h2 {
-        font-size: 2.5rem;
-      }
-
-      .duck {
-        font-size: 6rem;
-      }
-
-      nav a {
-        display: inline-block;
-        margin: 5px;
-      }
-    }
-  </style>
+        button {
+            background-color: orange;
+            color: white;
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+            font-size: 18px;
+        }
+    </style>
 </head>
 
 <body>
 
-  <header>
-    <h1>🦆 Duck Fan Club 🦆</h1>
-    <p>The internet's official unofficial duck appreciation page!</p>
+    <h1>🦆 Duck Fan Page 🦆</h1>
 
-    <nav>
-      <a href="#about">About</a>
-      <a href="#facts">Facts</a>
-      <a href="#gallery">Ducks</a>
-      <a href="#quack">Quack!</a>
-    </nav>
-  </header>
+    <p>Welcome to my website all about ducks!</p>
 
-  <main>
+    <div class="duck">🦆</div>
 
-    <!-- Hero -->
-    <section class="hero">
-      <div class="cloud one">☁️</div>
-      <div class="cloud two">☁️</div>
+    <div class="box">
+        <h2>Why I Like Ducks</h2>
 
-      <div class="hero-content">
-        <div class="duck">🦆</div>
-        <h2>Welcome, Duck Enthusiast!</h2>
         <p>
-          A website dedicated to the world's most adorable,
-          mysterious, and surprisingly quacky birds.
+            Ducks are cute, funny, and they can swim!
+            They are also famous for making a funny sound:
+            <b>QUACK!</b>
         </p>
-      </div>
-    </section>
+    </div>
 
-    <!-- About -->
-    <section id="about">
-      <h2>🌊 Why Ducks?</h2>
+    <div class="box">
+        <h2>Duck Facts</h2>
 
-      <div class="facts">
-        <div class="fact">
-          <div class="emoji">🦆</div>
-          <h3>They're Cute</h3>
-          <p>
-            Ducks have mastered the art of looking adorable while
-            casually waddling everywhere.
-          </p>
-        </div>
+        <p>🦆 Ducks have feathers.</p>
+        <p>🌊 Ducks can swim.</p>
+        <p>🥚 Ducks lay eggs.</p>
+        <p>🔊 Ducks can quack.</p>
+    </div>
 
-        <div class="fact">
-          <div class="emoji">🌊</div>
-          <h3>They Can Swim</h3>
-          <p>
-            Ducks are excellent swimmers and spend plenty of time
-            enjoying ponds, lakes, and rivers.
-          </p>
-        </div>
+    <div class="box">
+        <h2>My Favorite Duck</h2>
 
-        <div class="fact">
-          <div class="emoji">🥖</div>
-          <h3>They Love Snacks</h3>
-          <p>
-            Ducks are enthusiastic eaters. Just remember to feed
-            wild ducks appropriate food rather than bread.
-          </p>
-        </div>
-      </div>
-    </section>
+        <p>My favorite duck is the classic yellow duck!</p>
 
-    <!-- Facts -->
-    <section id="facts">
-      <h2>🤓 Duck Facts</h2>
+        <div class="duck">🐤</div>
+    </div>
 
-      <div class="facts">
-        <div class="fact">
-          <div class="emoji">👀</div>
-          <h3>Duck Vision</h3>
-          <p>
-            Ducks have excellent vision and can see colors that
-            humans can see too.
-          </p>
-        </div>
+    <div class="box">
+        <h2>Want to Hear a Quack?</h2>
 
-        <div class="fact">
-          <div class="emoji">🪶</div>
-          <h3>Waterproof Feathers</h3>
-          <p>
-            Ducks spread oil from a gland near their tails over
-            their feathers, helping keep water away from their skin.
-          </p>
-        </div>
+        <button onclick="quack()">Click Me!</button>
 
-        <div class="fact">
-          <div class="emoji">👣</div>
-          <h3>Waddle Power</h3>
-          <p>
-            Their short legs and body shape give ducks their
-            iconic waddle when they're walking on land.
-          </p>
-        </div>
+        <p id="quackText"></p>
+    </div>
 
-        <div class="fact">
-          <div class="emoji">🔊</div>
-          <h3>Quack!</h3>
-          <p>
-            Ducks have a surprisingly wide variety of calls and
-            sounds—not just the classic quack.
-          </p>
-        </div>
-      </div>
-    </section>
-
-    <!-- Gallery -->
-    <section id="gallery">
-      <h2>📸 The Duck Gallery</h2>
-
-      <div class="gallery">
-        <div class="gallery-card">
-          🐤
-          <p>Baby Duck</p>
-        </div>
-
-        <div class="gallery-card">
-          🦆
-          <p>Classic Duck</p>
-        </div>
-
-        <div class="gallery-card">
-          🦢
-          <p>Fancy Duck Cousin</p>
-        </div>
-
-        <div class="gallery-card">
-          🐥
-          <p>Tiny Duckling</p>
-        </div>
-      </div>
-    </section>
-
-    <!-- Interactive section -->
-    <section id="quack" class="quack-section">
-      <h2>🔊 Need More Quack?</h2>
-
-      <button class="quack-button" onclick="quack()">
-        CLICK FOR QUACK 🦆
-      </button>
-
-      <div id="quackText"></div>
-    </section>
-
-  </main>
-
-  <footer>
-    <p>🦆 Made with love, HTML, CSS & excessive amounts of duck energy.</p>
-    <p>© 2026 Duck Fan Club</p>
-  </footer>
-
-  <script>
-    const quacks = [
-      "QUACK! 🦆",
-      "QUACK QUACK! 🦆🦆",
-      "QUAAAAACK! 🦆",
-      "quack. 🐤",
-      "QUACK ATTACK!!! 🦆💥",
-      "🦆 QUACK MODE ACTIVATED 🦆"
-    ];
-
-    function quack() {
-      const text = document.getElementById("quackText");
-
-      const randomQuack =
-        quacks[Math.floor(Math.random() * quacks.length)];
-
-      text.textContent = randomQuack;
-
-      // Little animation
-      text.style.transform = "scale(1.3)";
-
-      setTimeout(() => {
-        text.style.transform = "scale(1)";
-      }, 150);
-    }
-  </script>
+    <script>
+        function quack() {
+            document.getElementById("quackText").innerHTML = "QUACK! 🦆";
+        }
+    </script>
 
 </body>
 </html>
