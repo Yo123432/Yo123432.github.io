@@ -22,8 +22,19 @@
             font-size: 100px;
         }
 
+        .goose {
+            font-size: 100px;
+        }
+
         .box {
             background-color: white;
+            margin: 20px;
+            padding: 20px;
+            border-radius: 10px;
+        }
+
+        .gooseBox {
+            background-color: lightgray;
             margin: 20px;
             padding: 20px;
             border-radius: 10px;
@@ -42,20 +53,35 @@
 
 <body>
 
-    <h1>🦆 Duck Fan Page 🦆</h1>
+    <!-- DUCK SECTION -->
 
-    <p>Welcome to my website all about ducks!</p>
+    <h1>🦆 THE DUCK FAN PAGE 🦆</h1>
+
+    <p>Welcome to the greatest duck website ever created.</p>
 
     <div class="duck">🦆</div>
 
     <div class="box">
-        <h2>Why I Like Ducks</h2>
+        <h2>Why Ducks Are Awesome</h2>
 
         <p>
             Ducks are cute, funny, and they can swim!
-            They are also famous for making a funny sound:
+            They also make the greatest sound in the world:
             <b>QUACK!</b>
         </p>
+    </div>
+
+    <div class="box">
+        <h2>Funny Duck Pictures</h2>
+
+        <p class="duck">🦆</p>
+        <p>LOOK AT THIS DUCK. WHAT A LEGEND.</p>
+
+        <p class="duck">🐤</p>
+        <p>SMALL DUCK. HUGE PERSONALITY.</p>
+
+        <p class="duck">🦆🥖</p>
+        <p>THE DUCK HAS ACQUIRED THE BREAD.</p>
     </div>
 
     <div class="box">
@@ -65,28 +91,100 @@
         <p>🌊 Ducks can swim.</p>
         <p>🥚 Ducks lay eggs.</p>
         <p>🔊 Ducks can quack.</p>
-    </div>
-
-    <div class="box">
-        <h2>My Favorite Duck</h2>
-
-        <p>My favorite duck is the classic yellow duck!</p>
-
-        <div class="duck">🐤</div>
+        <p>😎 Ducks are cool.</p>
     </div>
 
     <div class="box">
         <h2>Want to Hear a Quack?</h2>
 
-        <button onclick="quack()">Click Me!</button>
+        <button onclick="quack()">QUACK BUTTON</button>
 
         <p id="quackText"></p>
     </div>
 
+
+    <!-- GOOSE SECTION -->
+
+    <h1>⚠️ GOOSE ENEMY ZONE ⚠️</h1>
+
+    <div class="gooseBox">
+
+        <h2>🚨 THE GEESE ARE HERE 🚨</h2>
+
+        <p class="goose">🪿</p>
+
+        <p>
+            We have reason to believe that a goose has entered
+            the website.
+        </p>
+
+        <p>
+            Please remain calm.
+        </p>
+
+        <p>
+            Do NOT make eye contact with the goose.
+        </p>
+
+    </div>
+
+    <div class="gooseBox">
+
+        <h2>Why Ducks > Geese</h2>
+
+        <p>🦆 Ducks: Cute</p>
+        <p>🪿 Geese: Suspicious</p>
+
+        <p>🦆 Ducks: Friendly little waddles</p>
+        <p>🪿 Geese: CHARGE ATTACK</p>
+
+        <p>🦆 Ducks: QUACK</p>
+        <p>🪿 Geese: HOOOOONK</p>
+
+    </div>
+
+    <div class="gooseBox">
+
+        <h2>Goose Security System</h2>
+
+        <p class="goose">🪿</p>
+
+        <p>
+            If you see a goose approaching,
+            activate the emergency duck.
+        </p>
+
+        <p class="duck">🦆</p>
+
+        <button onclick="alert('🚨 DUCKS HAVE BEEN DEPLOYED! 🦆🦆🦆')">
+            DEPLOY DUCKS
+        </button>
+
+    </div>
+
+    <div class="gooseBox">
+
+        <h2>Official Duck vs. Goose Score</h2>
+
+        <p>🦆 DUCKS: 1000</p>
+
+        <p>🪿 GEESE: 0</p>
+
+        <p>
+            (The scoring system is completely unbiased.)
+        </p>
+
+    </div>
+
+    <h2>🦆 LONG LIVE THE DUCKS 🦆</h2>
+
     <script>
+
         function quack() {
-            document.getElementById("quackText").innerHTML = "QUACK! 🦆";
+            document.getElementById("quackText").innerHTML =
+                "QUAAAAACK!!! 🦆";
         }
+
     </script>
 
 </body>
